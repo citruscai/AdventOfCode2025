@@ -91,50 +91,64 @@ public class Day01 {
         }
     }
 
-    /**
-     * Solves Part 1 of the puzzle.
-     * Replace this with your actual solution.
-     */
+    
     public static int solvePart1(List<String> input) {
-      //ok so like whenever it goes left and past zero i will count that as passing zero 
       int prev = 50;
-      int index =0;
+      char prevDirection = 'R';
+            int index =0;
       int currPos = 50;
       int count =0;
-      while(index<input.size()){
+      int num_positions = 100;
+      while(index< input.size()){
         String rotation = input.get(index);
-        char direction = rotation.charAt(0);
-        int value = Integer.parseInt(rotation.substring(1));
-        if(direction == 'L'){
-          currPos-=value;
-
-        }else{
-          currPos+= value;
+        char currentDirection = rotation.charAt(0);
+        int turns = Integer.parseInt(rotation.substring(1));
+        if(prevDirection!= currentDirection){
+          currPos = (100-currPos)% 100;
+          prevDirection = currentDirection;
         }
-        if((prev >= 0 && currPos<=0 )||(prev <=0 && currPos >=0) ){
+        currPos+= turns;
+        currPos %=100;
+        if(currPos==0){
           count++;
         }
-        prev = currPos;
         index++;
+
       }
       return count;
 
 
       
     }
-    public int simulate(int from , int to, int value, char direction){
-      
-      while(value > 0){
-        
-      }
-    }
+    
 
     /**
      * Solves Part 2 of the puzzle.
      * Replace this with your actual solution.
      */
     public static int solvePart2(List<String> input) {
-        // TODO: Implement your solution for Part 2
-        return 0;
+            
+      char prevDirection = 'R';
+            int index =0;
+      int currPos = 50;
+      int count =0;
+      int num_positions = 100;
+      while(index< input.size()){
+        String rotation = input.get(index);
+        char currentDirection = rotation.charAt(0);
+        int turns = Integer.parseInt(rotation.substring(1));
+        if(prevDirection!= currentDirection){
+          currPos = (100-currPos)% 100;
+          prevDirection = currentDirection;
+        }
+        currPos+= turns;
+        count+=currPos/100;
+        currPos %=100;
+        
+        index++;
+
+      }
+      return count;
+
     }
 }
