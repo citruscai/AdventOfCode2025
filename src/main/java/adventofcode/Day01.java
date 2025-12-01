@@ -93,9 +93,9 @@ public class Day01 {
 
     
     public static int solvePart1(List<String> input) {
-      int prev = 50;
+    
       char prevDirection = 'R';
-            int index =0;
+      int index =0;
       int currPos = 50;
       int count =0;
       int num_positions = 100;
@@ -129,7 +129,7 @@ public class Day01 {
     public static int solvePart2(List<String> input) {
             
       char prevDirection = 'R';
-            int index =0;
+      int index =0;
       int currPos = 50;
       int count =0;
       int num_positions = 100;
