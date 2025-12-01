@@ -122,10 +122,7 @@ public class Day01 {
     }
     
 
-    /**
-     * Solves Part 2 of the puzzle.
-     * Replace this with your actual solution.
-     */
+   
     public static int solvePart2(List<String> input) {
             
       char prevDirection = 'R';
