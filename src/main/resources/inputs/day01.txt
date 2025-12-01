@@ -1,6 +1,3 @@
-# Your Day 1 puzzle input goes here
-# Delete these comment lines and paste your input from https://adventofcode.com/2025/day/1/input
-
 L37
 L16
 L20
